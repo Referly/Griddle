@@ -1,5 +1,7 @@
 "use strict";
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 /*
    See License / Disclaimer https://raw.githubusercontent.com/DynamicTyped/Griddle/master/LICENSE
 */
@@ -42,7 +44,7 @@ var GridTitle = React.createClass({
       var meta = that.props.columnSettings.getColumnMetadataByName(col);
       var HeaderComponent = meta.customHeaderComponent;
       if (HeaderComponent) {
-        return React.createElement(HeaderComponent, { columnMetadata: meta, sortSettings: that.props.sortSettings, key: meta.columnName });
+        return React.createElement(HeaderComponent, _extends({ columnMetadata: meta, sortSettings: that.props.sortSettings, key: meta.columnName }, meta.customHeaderComponentProps || {}));
       } else {
         var columnSort = "";
         var sortComponent = null;

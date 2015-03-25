@@ -40,7 +40,7 @@ var GridTitle = React.createClass({
         var meta = that.props.columnSettings.getColumnMetadataByName(col);
         var HeaderComponent = meta.customHeaderComponent;
         if (HeaderComponent) {
-          return <HeaderComponent columnMetadata={meta} sortSettings={that.props.sortSettings} key={meta.columnName} />;
+          return <HeaderComponent columnMetadata={meta} sortSettings={that.props.sortSettings} key={meta.columnName} {...meta.customHeaderComponentProps || {}}/>;
         } else {
           var columnSort = "";
           var sortComponent = null;
