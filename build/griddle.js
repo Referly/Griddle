@@ -1680,7 +1680,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var meta = that.props.columnSettings.getColumnMetadataByName(col);
 	      var HeaderComponent = meta.customHeaderComponent;
 	      if (HeaderComponent) {
-	        return React.createElement(HeaderComponent, { columnMetadata: meta, sortSettings: that.props.sortSettings });
+	        return React.createElement(HeaderComponent, { columnMetadata: meta, sortSettings: that.props.sortSettings, key: meta.columnName });
 	      } else {
 	        var columnSort = "";
 	        var sortComponent = null;
